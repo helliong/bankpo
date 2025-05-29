@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Банк ПО</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Банк программного обеспечения</h1>
+
+    <section>
+      <h2>Добавить ПО</h2>
+      <input type="text" id="name" placeholder="Название">
+      <input type="text" id="developer" placeholder="Разработчик">
+      <input type="text" id="version" placeholder="Версия">
+      <input type="number" id="year" placeholder="Год">
+      <button onclick="addSoftware()">Добавить</button>
+    </section>
+
+    <section>
+      <h2>Поиск и действия</h2>
+      <input type="text" id="search" placeholder="Введите разработчика">
+      <button onclick="searchSoftware()">Поиск</button>
+      <button onclick="resetSearch()">Показать всё</button>
+      <button onclick="sortSoftware()">Сортировать по году</button>
+      <button onclick="clearAll()">Очистить всё</button>
+      <button onclick="saveToFile()">Сохранить в файл</button>
+      <input type="file" id="fileInput" accept=".json" onchange="loadFromFile()" style="display: none;">
+      <button onclick="document.getElementById('fileInput').click()">Загрузить из файла</button>
+    </section>
+
+    <section>
+      <h2>Список ПО</h2>
+      <table id="softwareTable">
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>Разработчик</th>
+            <th>Версия</th>
+            <th>Год</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
